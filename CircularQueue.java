@@ -50,8 +50,8 @@ public class CircularQueue <T>
         }
         else
         {
-            head++;
-             value = array[head%n];
+            tail++;
+             value = array[tail%n];
         }
     }
     
@@ -64,8 +64,8 @@ public class CircularQueue <T>
         }
         else
         {
-            tail--;
-            return array[tail%n];
+            head++;
+            return array[head%n];
         }
     }
     
