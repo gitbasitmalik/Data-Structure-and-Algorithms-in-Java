@@ -50,8 +50,28 @@ public class LinkListRevision <T>
             end = newnode;
         }
     }
+    public T  deleteAtStart()
+    {
+        if(start ==null) 
+        {
+            System.out.println("List is Empty");
+            return null;
+        }
+        else if  (start==end)
+        {
+            T value = start.data;
+            start = end = null;
+            return value;
+        }
+        else
+        {
+            T value = start.data;
+            start = start.next;
+            return value;
+        }
+    }
     
-    public T deleteAtStart()
+    public T deleteAtEnd()
     {
         if(start==null)
         {
@@ -80,6 +100,36 @@ public class LinkListRevision <T>
             
         }
         
-       
+        public Node search(T key)
+    {
+        if(start!=null)
+        {
+            Node tnode= start;
+            while (tnode!=null)
+            {
+                if(tnode.data==key)
+                {
+                    return tnode;
+                }
+                tnode = tnode.next;
+            }
+        }
+        return null;
     }
+        
+    }
+    
+     public void print()
+    {
+        if(start!=null)
+        {
+            Node tnode = start;
+            while(tnode!=null)
+            {
+                System.out.println(tnode.data+"--->");
+                tnode = tnode.next;
+            }
+        }
+    }
+    
 }
