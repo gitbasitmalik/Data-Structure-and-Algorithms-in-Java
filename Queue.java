@@ -62,7 +62,7 @@ public class Queue <T>
         tail--;
     }
      
-      //Size Shrink
+      //For Size Shrink you must put head = -1;
      
      public T dequeue2()
      {
