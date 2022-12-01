@@ -86,16 +86,16 @@ public class LinkListRevision <T>
         }
         else
         {
-            Node node1 = start;
-            Node node2 = null;
-            while(node1.next != null)
+            Node lastnode = start;
+            Node secondlast = null;
+            while(lastnode.next != null)
             {
-                node2 = node1;
-                node1 = node1.next;
+                secondlast = lastnode;
+                lastnode = lastnode.next;
             }
-            T value = node1.data;
-            node2.next = null;
-            end = node2;
+            T value = lastnode.data;
+            secondlast.next = null;
+            end = secondlast;
             return value;
             
         }
